@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/base_widget.dart';
 import 'layout_widget.dart';
+import 'container_widget.dart';
 
 void main() => runApp(MyApp());
 
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
       routes: {
         "base_widget": (context)=> BaseWidget(),
         "layout_widget": (context)=> FlexWidget(),
-        "wrap_widget": (context) => WrapLayoutWidget()
+        "wrap_widget": (context) => WrapLayoutWidget(),
+        "scaffold_widget": (context)=> ScaffoldTest()
       },
     );
   }
@@ -37,12 +39,14 @@ class _MyHomePageState extends State<MyHomePage> {
   List<String> items = [
     "基础Widgets",
     "Flex布局",
-    "流式布局(Wrap)"
+    "流式布局(Wrap)",
+    "scaffold_widget"
   ];
   List<String> routeName = [
     "base_widget",
     "layout_widget",
-    "wrap_widget"
+    "wrap_widget",
+    "scaffold_widget"
   ];
 
   @override
