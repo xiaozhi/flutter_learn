@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_practice/base_widget.dart';
 import 'layout_widget.dart';
 import 'container_widget.dart';
+import 'channel_test.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,10 +17,11 @@ class MyApp extends StatelessWidget {
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
       routes: {
-        "base_widget": (context)=> BaseWidget(),
-        "layout_widget": (context)=> FlexWidget(),
+        "base_widget": (context) => BaseWidget(),
+        "layout_widget": (context) => FlexWidget(),
         "wrap_widget": (context) => WrapLayoutWidget(),
-        "scaffold_widget": (context)=> ScaffoldTest()
+        "scaffold_widget": (context) => ScaffoldTest(),
+        "channel_test" : (context) => ChannelDemo()
       },
     );
   }
@@ -35,45 +37,35 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-  List<String> items = [
-    "基础Widgets",
-    "Flex布局",
-    "流式布局(Wrap)",
-    "scaffold_widget"
-  ];
+  List<String> items = ["基础Widgets", "Flex布局", "流式布局(Wrap)", "scaffold_widget", "通道测试"];
   List<String> routeName = [
     "base_widget",
     "layout_widget",
     "wrap_widget",
-    "scaffold_widget"
+    "scaffold_widget",
+    "channel_test"
   ];
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: ListView.separated(
-          itemBuilder: (BuildContext context, int index){
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+        body: ListView.separated(
+            itemBuilder: (BuildContext context, int index) {
               return ListTile(
                 title: Text(items[index]),
-                onTap: (){
+                onTap: () {
                   Navigator.of(context).pushNamed(routeName[index]);
                 },
               );
-          },
-          separatorBuilder: (BuildContext context, int index){
+            },
+            separatorBuilder: (BuildContext context, int index) {
               return Divider(color: Colors.blue);
-          },
-          itemCount: items.length)
-    );
+            },
+            itemCount: items.length));
   }
 
-
-  Widget _buildRow(int index){
-    
-  } 
+  Widget _buildRow(int index) {}
 }

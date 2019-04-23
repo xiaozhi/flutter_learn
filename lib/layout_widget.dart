@@ -9,16 +9,13 @@ class FlexWidget extends StatefulWidget {
 }
 
 class _FlexWidgetState extends State<FlexWidget> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: Text("Flex layoiut(弹性布局)")),
         body: Column(
-
           children: <Widget>[
             Container(height: 20),
-
             Flex(
               direction: Axis.horizontal,
               children: <Widget>[
@@ -45,9 +42,7 @@ class _FlexWidgetState extends State<FlexWidget> {
                 )
               ],
             ),
-
             Container(height: 20),
-
             SizedBox(
               height: 200,
               child: Flex(
@@ -77,10 +72,8 @@ class _FlexWidgetState extends State<FlexWidget> {
                 ],
               ),
             )
-
           ],
-        )
-    );
+        ));
   }
 }
 
@@ -100,40 +93,46 @@ class _WrapLayoutState extends State<WrapLayoutWidget> {
         appBar: AppBar(title: Text("WrapLayout")),
         body: Wrap(
           alignment: WrapAlignment.center,
-          spacing: 20,  //横轴方向间距
+          spacing: 20, //横轴方向间距
           runSpacing: 10, //纵轴方向的间距
           children: <Widget>[
             Chip(
-              avatar: CircleAvatar(backgroundColor: Colors.blue, child: Text("T")),
+              avatar:
+                  CircleAvatar(backgroundColor: Colors.blue, child: Text("T")),
               label: Text("Text"),
             ),
             Chip(
-              avatar: CircleAvatar(backgroundColor: Colors.blue, child: Text("T")),
+              avatar:
+                  CircleAvatar(backgroundColor: Colors.blue, child: Text("T")),
               label: Text("Text"),
             ),
             Chip(
-              avatar: CircleAvatar(backgroundColor: Colors.blue, child: Text("T")),
+              avatar:
+                  CircleAvatar(backgroundColor: Colors.blue, child: Text("T")),
               label: Text("Text"),
             ),
             Chip(
-              avatar: CircleAvatar(backgroundColor: Colors.blue, child: Text("T")),
+              avatar:
+                  CircleAvatar(backgroundColor: Colors.blue, child: Text("T")),
               label: Text("Text"),
             ),
             Chip(
-              avatar: CircleAvatar(backgroundColor: Colors.blue, child: Text("T")),
+              avatar:
+                  CircleAvatar(backgroundColor: Colors.blue, child: Text("T")),
               label: Text("Text"),
             ),
             Chip(
-              avatar: CircleAvatar(backgroundColor: Colors.blue, child: Text("T")),
+              avatar:
+                  CircleAvatar(backgroundColor: Colors.blue, child: Text("T")),
               label: Text("Text"),
             ),
             Chip(
-              avatar: CircleAvatar(backgroundColor: Colors.blue, child: Text("T")),
+              avatar:
+                  CircleAvatar(backgroundColor: Colors.blue, child: Text("T")),
               label: Text("Text"),
             )
           ],
-        )
-    );
+        ));
   }
 }
 
@@ -164,14 +163,13 @@ class _FlowLayoutState extends State<FlowLayoutRoute> {
             new Container(width: 80, height: 80, color: Colors.brown),
             new Container(width: 80, height: 80, color: Colors.tealAccent),
           ],
-        )
-    );
+        ));
   }
 }
 
 class _TestFlowDelegate extends FlowDelegate {
   EdgeInsets margin = EdgeInsets.all(10);
-  
+
   @override
   void paintChildren(FlowPaintingContext context) {
     // TODO: implement paintChildren
@@ -182,5 +180,4 @@ class _TestFlowDelegate extends FlowDelegate {
     // TODO: implement shouldRepaint
     return null;
   }
-
 }
