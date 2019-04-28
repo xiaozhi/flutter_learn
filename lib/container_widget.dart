@@ -46,9 +46,9 @@ class _ScafflodTestState extends State<ScaffoldTest>
          ),
       ),
       drawer: new _MyDrawer(),
-body: GestureDetector(
+    body: GestureDetector(
 
-),
+    ),
 //       endDrawer: new Drawer(), 右边抽
     );
   }
