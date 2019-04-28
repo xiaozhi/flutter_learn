@@ -99,8 +99,15 @@ class _EventState extends State<EventRoute> {
               child: GestureDetector(
                 child: Image.asset("image/th.jpeg",width: _imageWidth),
                 onScaleUpdate: (detail) {
-                  _imageWidth = 200 * detail .scale.clamp(.8, 10.0);
-                }
+                  print("aa");
+                  setState(() {
+                    print("upgrade ${detail.scale}");
+                    _imageWidth = 200 * detail .scale.clamp(.8, 10.0);
+                  });
+                },
+                onScaleEnd: (detail){
+                  print("end $detail");
+                },
               ),
             )
           ],
